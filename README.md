@@ -1,2 +1,2 @@
-# Crypto Data Analysis
-Data dump of large cap cryptocurrency as well as a general analyses of their price action on various timeframes.
+# Fibonacci Efficacy
+A suite of models to test the efficacy of fibonacci retracements in predicting price action reversals in the financial markets.
