@@ -17,16 +17,22 @@ def islocalmin(x):
 def isextrema(x):
     return islocalmax(x) or islocalmin(x)
 
-def create_zigzag(col, p=0.2): 
+def create_pp(col): 
     # @param p percentage filter
     mcol = deepcopy(list(col))
     mcol.insert(0, mcol[0])
     mcol.append(mcol[-1])
     tcol = [isextrema(x) for x in list(more_itertools.windowed(mcol, n=3))]
+    stcol = [(x) for x in list(more_itertools.windowed(mcol, n=3))]
     pp = []
     for i, t_w in enumerate(tcol):
-        pp.append(t_w)
-    
-    e_l = [x for x in col]
+        if(t_w):
+            if(islocalmax(stcol[i])):
+                pp.append(1)
+            if(islocalmin(stcol[i])):
+                pp.append(-1)
+        else:
+            pp.append(0)
+    return pp
 
 

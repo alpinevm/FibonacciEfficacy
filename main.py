@@ -30,7 +30,7 @@ def main():
     for i, dt in enumerate(data):
         df = pandas.Series(dt["Close"])
         zz = fib.create_zigzag(df)
-        print(zz)
+        #print(zz)
         #col.plot()
         #plt.show()
 
